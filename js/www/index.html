@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<title>eGaaS</title>
+<link rel="shortcut icon" href="static/img/favicon.ico" type="image/x-icon">
+<!-- =============== VENDOR STYLES ===============-->
+<!-- FONT AWESOME-->
+<link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.min.css">
+<!-- SIMPLE LINE ICONS-->
+<link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.css">
+<!-- ANIMATE.CSS-->
+<link rel="stylesheet" href="vendor/animate.css/animate.min.css">
+<!-- WHIRL (spinners)-->
+<link rel="stylesheet" href="vendor/whirl/dist/whirl.css">
+<!-- =============== PAGE VENDOR STYLES ===============-->
+<!-- DATATABLES-->
+<link rel="stylesheet" href="vendor/datatables-colvis/css/dataTables.colVis.css">
+<link rel="stylesheet" href="vendor/datatables/media/css/dataTables.bootstrap.css">
+<link rel="stylesheet" href="vendor/dataTables.fontAwesome/index.css">
+<!-- XEDITABLE-->
+<link rel="stylesheet" href="vendor/x-editable/dist/bootstrap3-editable/css/bootstrap-editable.css">
+<!-- DATETIMEPICKER-->
+<link rel="stylesheet" href="vendor/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css">
+<link rel="stylesheet" href="vendor/datetimepicker/jquery.datetimepicker.css">
+<!-- SELECT2-->
+<link rel="stylesheet" href="vendor/select2/dist/css/select2.css">
+<link rel="stylesheet" href="vendor/select2-bootstrap-theme/dist/select2-bootstrap.css">
+<!-- Loaders.css-->
+<link rel="stylesheet" href="vendor/loaders.css/loaders.css">
+<!-- Spinkit-->
+<link rel="stylesheet" href="vendor/spinkit/css/spinkit.css">
+<!-- SWEET ALERT-->
+<link rel="stylesheet" href="vendor/sweetalert/dist/sweetalert.css">
+<!-- =============== APP STYLES ===============-->
+<script>document.write("<link rel='stylesheet' href='static/css/style.css?v=" + Math.floor((Math.random() * 1000000) + 1) + "'>");</script>
+<style>
+	#NProgressStart .bar:before {
+		background-image:url(/static/img/logo.{{.LogoExt}});
+	}
+	#NProgressStart .bar .peg {
+		background-image:url(/static/img/logo.{{.LogoExt}});
+	}
+	.loader .logo .null {
+		background-image:url(static/img/logo_null.svg);
+	}
+	.loader .logo .ok {
+		background-image:url(static/img/logo_ok.svg);
+	}
+	.brand:after {
+		background-image:url(static/img/logo.{{.LogoExt}});
+	}
+</style>
+
+<script src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyBSoSxKFr6M-iL3RUm-PtHmA2zZTesjNKo"></script>
+
+<!-- build:js app.js -->
+<script src="js/crypto/ext/prng4-min.js"></script>
+<script src="js/crypto/ext/jsbn-min.js"></script>
+<script src="js/crypto/ext/jsbn2-min.js"></script>
+<script src="js/crypto/ext/ec-min.js"></script>
+<script src="js/crypto/ext/rng-min.js"></script>
+<script src="js/crypto/ecparam-1.0.min.js"></script>
+<script src="js/crypto/ext/cj/cryptojs-312-core-fix-min.js"></script>
+<script src="js/crypto/ext/cj/x64-core_min.js"></script>
+<script src="js/crypto/ext/cj/md5_min.js"></script>
+<script src="js/crypto/ext/cj/aes.js"></script>
+<script src="js/crypto/ext/cj/sha1_min.js"></script>
+<script src="js/crypto/ext/cj/sha256_min.js"></script>
+<script src="js/crypto/ext/yahoo-min.js"></script>
+<script src="js/crypto/ext/ec-patch-min.js"></script>
+<script src="js/crypto/crypto-1.1.min.js"></script>
+<script src="js/crypto/asn1-1.0.min.js"></script>
+<script src="js/crypto/asn1hex-1.1.min.js"></script>
+<script src="js/crypto/ecdsa-modified-1.0.min.js"></script>
+
+<script src="vendor/modernizr/modernizr.custom.js"></script>
+<script src="vendor/jquery/dist/jquery.js"></script>
+<script src="vendor/jquery/dist/jquery.mobile-1.4.5.js"></script>
+<script src="vendor/bootstrap/dist/js/bootstrap.js"></script>
+<script src="vendor/jQuery-Storage-API/jquery.storageapi.js"></script>
+<script src="vendor/moment/min/moment-with-locales.min.js"></script>
+<script src="vendor/datatables/media/js/jquery.dataTables.min.js"></script>
+<script src="vendor/datatables-colvis/js/dataTables.colVis.js"></script>
+<script src="vendor/datatables/media/js/dataTables.bootstrap.js"></script>
+<script src="vendor/datatables/media/js/dataTables.colReorder.min.js"></script>
+<script src="vendor/x-editable/dist/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
+<script src="vendor/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+<script src="vendor/datetimepicker/jquery.datetimepicker.full.js"></script>
+<script src="vendor/bootstrap-filestyle/src/bootstrap-filestyle.js"></script>
+<script src="vendor/select2/dist/js/select2.js"></script>
+<script src="vendor/sweetalert/dist/sweetalert-dev.js"></script>
+<script src="vendor/jquery-classyloader/js/jquery.classyloader.min.js"></script>
+<script src="vendor/Chart.js/Chart.js"></script>
+<script src="vendor/sparkline/index.js"></script>
+<script src="vendor/animo.js/animo.js"></script>
+<script src="vendor/slimScroll/jquery.slimscroll.min.js"></script>
+
+<script src="js/datetime.js"></script>
+<script src="js/clipboard.js"></script>
+<script src="js/nprogress.js"></script>
+<script src="js/tooltip.js"></script>
+<script src="js/inputmask.js"></script>
+<script src="js/typeahead.js"></script>
+<script src="js/textEditor/ace.js"></script>
+<script src="js/textEditor/ext-language_tools.js"></script>
+<script src="js/textEditor/theme-chrome.js"></script>
+<script src="js/textEditor/theme-crimson_editor.js"></script>
+<script src="js/textEditor/theme-xcode.js"></script>
+<script src="js/textEditor/mode-c_cpp.js"></script>
+<script src="js/textEditor/mode-less.js"></script>
+<script src="js/textEditor/mode-yaml.js"></script>
+<script src="js/textEditor/mode-markdown.js"></script>
+<script src="js/textEditor/beautify.js"></script>
+<script src="js/photoEditor/vue.min.js"></script>
+<script src="js/photoEditor/cropper.min.js"></script>
+<script src="js/countUp.js"></script>
+<script src="js/count.js"></script>
+<script src="js/scrollTo.js"></script>
+<!--<script src="js/map.js"></script>-->
+<script src="js/app.js"></script>
+<script src="js/panel-scroll.js"></script>
+<script src="js/panel-collapse.js"></script>
+<script src="js/panel-refresh.js"></script>
+<script src="js/panel-dismiss.js"></script>
+<script src="js/mmenu.js"></script>
+<!-- endbuild -->
+
+<script src="js/keys.js"></script>
+<script>document.write("<script type='text/javascript' src='static/js/index.js?v=" + Math.floor((Math.random() * 1000000) + 1) + "'><\/script>");</script>
+
+<script>
+	var isMobile = {{.Mobile}};
+	var Version = '{{.Version}}';
+//	    var accounts = '{{.Accounts}}';
+	var thrust = {{.Thrust}};
+	var PageName = "";
+	var TableName = "";
+	var TableGlobal = "";
+	if ( typeof THRUST != "undefined" )
+	{
+		THRUST.remote.send('ACCOUNTS');
+		THRUST.remote.listen(function(answer) {
+			localStorage.setItem('Accounts', answer.payload );
+			GKey.init();
+		});
+	}
+/*		if (accounts.length > 0 && thrust) {
+		localStorage.setItem('Accounts', accounts);
+	}*/
+	$( document ).ready(function() {
+		{{if .Langs}}
+			var list = {{.Langs}}.split(',');
+			localStorage.setItem('EGAAS_LANG', list[0]);
+			changeLanguage(list[0]);
+		{{else}}
+			loadLanguage();
+		{{end}}
+		
+		{{if not .DbOk}}
+			NProgressStart.set(1);
+			$("#dl_content").load("content", function(response, status) {
+				if ( status == "error" ) { window.location.href = "index"; }
+				$("#loading_db").css("display", "none");
+			})
+		{{else if .Key}}
+			NProgressStart.set(1);
+			$( "#dl_content" ).load( "content", { key: {{.Key}}}, function() {
+				NProgressStart.done();
+			});
+
+/*				NProgressStart.set(1);
+			$("#dl_content").load( "content", { {{if .SetLang}}"parameters": {"lang":{{.SetLang}} }{{end}} }, function() {
+				$("#key").text("{{.Key}}");
+				doSign('login');
+			})
+			load_menu({{if .SetLang}}{{.SetLang}}{{end}});*/
+		{{else}}
+			//g_menuShow = false;
+			NProgressStart.set(1);
+			//load_menu();
+			
+			//setTimeout(function(){
+				$( "#dl_content" ).load( "content", { tpl_name: 'home'}, function() {
+					load_menu(undefined, 'dashboard_default');
+					NProgressStart.done();
+				});
+			//}, 100);
+		{{end}}
+	});
+</script>
+</head>
+<body class="layout-fixed">
+   <a href="#" id="hamburger" class="visible-xs">
+      <span class="hamburger hamburger--collapse">
+         <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+         </span>
+      </span>
+   </a>
+   <div id="dl_page">
+	   <div class="wrapper">
+		  <div class="nav_hist">
+			  <a href="#" id="hist_back" onclick="return hist_back();" style="display:none;">Back</a>
+			  <a href="#" id="hist_forward" onclick="return hist_forward();" style="display:none;">Forward</a>
+		  </div>
+		  <div id="dl_menu"> </div>
+		  <section>
+			 <div id="dl_content" class="content-wrapper"></div>
+		  </section>
+	   </div>
+   </div>
+   <div id="dl_modal"></div>
+   <div id="loader"></div>
+   <div style="display: none;">
+		<div id="key">key</div>
+		<div id="password">password</div>
+		<img  id="image_key" alt="" />
+		<canvas  id="canvas_key"></canvas>
+	</div>
+	<button id="notify" class="hidden" type="button" data-notify="" data-message="" data-options=""></button>
+	<div id="triangles">
+		<div id="triangles_output" class="triangles"></div>
+		<div id="triangles_controls" class="controls" style="visibility:hidden;"></div>
+	</div>
+</body>
+</html>
